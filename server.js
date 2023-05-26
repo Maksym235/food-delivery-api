@@ -1,11 +1,11 @@
 const app = require("./app");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const url = process.env.DB_HOST.toString();
 
 mongoose.set("strictQuery", true);
-
 mongoose
-  .connect(process.env.DB_HOST, {
+  .connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
