@@ -1,7 +1,7 @@
 const app = require("./app");
 const mongoose = require("mongoose");
 require("dotenv").config();
-const url = process.env.DB_HOST.toString();
+const url = process.env.DB_HOST;
 
 mongoose.set("strictQuery", true);
 mongoose
