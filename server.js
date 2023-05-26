@@ -5,7 +5,10 @@ require("dotenv").config();
 mongoose.set("strictQuery", true);
 
 mongoose
-  .connect(process.env.DB_HOST)
+  .connect(process.env.DB_HOST, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("db connection established");
     app.listen(3000, () => {
